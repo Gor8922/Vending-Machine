@@ -1,0 +1,114 @@
+<html>
+
+<head>
+<title>Vending Machine</title>
+</head>
+<body>
+ 
+    <script>
+        const pahest = {
+            product: {
+                drink: [
+                    {
+                        name: 'Coffe',
+                        prise: 100,
+                        quantity: 5,
+                        code: 'A1'
+                    },
+                    {
+                        name: 'Tea',
+                        prise: 200,
+                        quantity: 4,
+                        code: 'A2'
+                    },
+                    {
+                        name: 'Juise',
+                        prise: 300,
+                        quantity: 8,
+                        code: 'A3'
+                    },
+
+                ],
+                sweet: [
+                    {
+                        name: 'Mars',
+                        prise: 300,
+                        quantity: 7,
+                        code: 'B1'
+                    },
+                    {
+                        name: 'Twix',
+                        prise: 350,
+                        quantity: 6,
+                        code: 'B2'
+                    },
+                    {
+                        name: 'Snikers',
+                        prise: 320,
+                        quantity: 10,
+                        code: 'B3'
+                    },
+                ]
+            }
+        }
+
+           function myfunction(){
+           let gumar= +prompt('add money');
+           let productcode= prompt('add code');
+           let qanak=+prompt('add qanak');
+           for ( let i=0; i<pahest.product.drink.length; i++){
+               if (pahest.product.drink[i].code === productcode && pahest.product.drink[i].quantity >= qanak && pahest.product.drink[i].prise <= gumar){
+                   alert (`take your drink ${pahest.product.drink[i].name} + manry ${gumar-pahest.product.drink[i].prise}` );
+               } else if (pahest.product.drink[i].code !=productcode && pahest.product.drink[i].quantity < qanak && pahest.product.drink[i].prise > gumar){
+                   alert ('Sxal');
+               }
+           } 
+           }
+
+           function myfunction1 (){
+           let gumar= +prompt('add money');
+           let productcode= prompt('add code');
+           let qanak=+prompt('add qanak');
+           for ( let j=0; j<pahest.product.sweet.length; j++){
+               if (pahest.product.sweet[j].code === productcode && pahest.product.sweet[j].quantity >= qanak && pahest.product.sweet[j].prise <= gumar){
+                   alert (`take your sweet ${pahest.product.sweet[j].name} + manry ${gumar-pahest.product.sweet[j].prise}` );
+               } else if (pahest.product.sweet[j].code !=productcode && pahest.product.sweet[j].quantity < qanak && pahest.product.sweet[j].prise > gumar){
+                   alert ('Sxal');
+               }
+           } 
+           }
+
+        function myfunction2(){
+            let add = prompt('add a product  code');
+        let chap = +prompt('add a quantity');
+        let verjnakan;
+        for (let i = 0; i < pahest.product.drink.length; i++) {
+            if (pahest.product.drink[i].code === add) {
+                let verjnakan = pahest.product.drink[i].quantity + chap;
+                alert(`thank you for ${chap} product`);
+            }
+        }
+        for (let j = 0; j < pahest.product.sweet.length; j++) {
+            if (pahest.product.sweet[j].code === add) {
+                let verjnakan = pahest.product.sweet[j].quantity + chap;
+                alert(`thank you for ${chap} product`);
+            }
+        }
+
+        }
+         let choise = +prompt('1- gnel apranq , 2-avelacnel apranq');
+         if (choise==1) {
+             let yntrel = +prompt("1-drink (A1-Coffe, A2-Tea, A3-Juise) , 2- sweet(B1-Mars, B2-Twix,) ");
+             if (yntrel==1) {
+                 myfunction()
+             } else if (yntrel==2){
+                 myfunction1()
+             }
+         } else if (choise==2) {
+             myfunction2()
+         } 
+
+    </script>
+</body>
+
+</html>
